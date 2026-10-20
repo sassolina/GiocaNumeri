@@ -9,7 +9,7 @@ public class Giocatore implements Runnable{
     String nome;
     int punteggio;
 
-    public Giocatore(String nome){
+    public Giocatore(String nome) {
         this.nome= nome;
     }
 
@@ -19,6 +19,7 @@ public class Giocatore implements Runnable{
     }
 
     public void gioca() {
+        Long tempoInizio = System.currentTimeMillis();
         int numero = 10;
         String parola = "buongiorno";
         punteggio = 100;
@@ -34,7 +35,9 @@ public class Giocatore implements Runnable{
             }
         }
 
-        System.out.println("Giocatore "+nome +" punteggio: "+punteggio);
+        System.out.println("Giocatore "+nome +"parola: "+parola + " punteggio: "+punteggio);
+        Long tempoFine = System.currentTimeMillis();
+        System.out.println("Giocatore: "+nome+"tempo: "+(tempoFine - tempoInizio)/1000);
     }
 
 }
